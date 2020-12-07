@@ -7,6 +7,9 @@ import pandas_datareader.data as web
 style.use('ggplot')
 
 df = pd.read_csv('tsla.csv', parse_dates=True, index_col=0)
+
+#column manipulation
+#adding new column of moving averages
 df['100ma'] = df['Adj Close'].rolling(window=100, min_periods=0).mean()
 #df.dropna(inplace=True)
 print(df.head())
